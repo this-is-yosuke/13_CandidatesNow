@@ -43,7 +43,7 @@ const CandidateSearch = () => {
 
   return (
   <>
-    <section>
+    <section onLoad={()=>loadRandomProfile()}>
       <h1>CandidateSearch</h1>
     </section>
     <CandidateCard
