@@ -8,8 +8,8 @@ import type Candidate from '../interfaces/Candidate.interface';
 const CandidateSearch = () => {
 
   const [currentCandidate, setCandidate] = useState<Candidate>({
-    Image: '',
     Name: '',
+    ProfilePic: '',
     Location: '',
     Email: '',
     Company: '',
@@ -28,8 +28,15 @@ const CandidateSearch = () => {
   }
 
   // Since the app loads profiles RANDOMLY, I don't need seachInput, do I? I think I need to use an onLoad event
-  const loadRandomProfile = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+  // This uses a mouse event
+  // const loadRandomProfile = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   event.preventDefault();
+  //   const data: Candidate = await searchGithub();
+  //   setCandidate(data);
+  // };
+  // ------------------------------------------------
+  // This does NOT use any events
+  const loadRandomProfile = async () => {
     const data: Candidate = await searchGithub();
     setCandidate(data);
   };
@@ -44,14 +51,14 @@ const CandidateSearch = () => {
     addToPotentialCandidates={addToPotentialCandidates}
     loadRandomProfile={loadRandomProfile}
     />
-    <section>
+    {/* <section>
       <button onClick={(event: React.MouseEvent<HTMLButtonElement>) =>{
         loadRandomProfile(event);
       }}></button>
       <button onClick={(event: React.MouseEvent<HTMLButtonElement>) =>{
         loadRandomProfile(event); addToPotentialCandidates();
       }}></button>
-    </section>
+    </section> */}
   </>
 )
 };
