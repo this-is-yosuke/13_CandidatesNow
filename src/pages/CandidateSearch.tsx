@@ -1,19 +1,30 @@
 // import { useState, useEffect } from 'react'; useEffect appears unneeded
 import { useState } from 'react';
 // import { searchGithub, searchGithubUser } from '../api/API'; searchGithubUser is seemingly useless
-import { searchGithub } from '../api/API';
+// import { searchGithub, searchGithubID } from '../api/API';
+import { searchGithubID } from '../api/API';
 import CandidateCard from '../components/CandidateCard';
 import type Candidate from '../interfaces/Candidate.interface';
 
 const CandidateSearch = () => {
 
   const [currentCandidate, setCandidate] = useState<Candidate>({
-    Name: '',
+    // Name: '',
+    Login: '',
     ProfilePic: '',
     Location: '',
     Email: '',
     Company: '',
     Bio: '',
+    login: '',
+    id: 0,
+    node_id: '',
+    avatar_url: '',
+    gravatar_id: '',
+    location: '',
+    email: '',
+    company: '',
+    bio: ''
   });
 
   // Retieving list of candidates from localStorgae and appending a new profile
@@ -35,21 +46,28 @@ const CandidateSearch = () => {
   //   setCandidate(data);
   // };
   // ------------------------------------------------
-  // This does NOT use any events
-  const loadRandomProfile = async () => {
-    const data: Candidate = await searchGithub();
+  // This does NOT use any events AND it returns a LIST of profiles. I want ONE
+  // const loadRandomProfile = async () => {
+  //   const data: Candidate = await searchGithub();
+  //   setCandidate(data);
+  // };
+
+  const loadRandomID = async () => {
+    const data: Candidate = await searchGithubID();
     setCandidate(data);
   };
 
   return (
   <>
-    <section onLoad={()=>loadRandomProfile()}>
+    {/* <section onLoad={()=>loadRandomProfile()}> */}
+    <section onLoad={()=>loadRandomID()}>
       <h1>CandidateSearch</h1>
     </section>
     <CandidateCard
     currentCandidate={currentCandidate}
     addToPotentialCandidates={addToPotentialCandidates}
-    loadRandomProfile={loadRandomProfile}
+    // loadRandomProfile={loadRandomProfile}
+    loadRandomID={loadRandomID}
     />
     {/* <section>
       <button onClick={(event: React.MouseEvent<HTMLButtonElement>) =>{
