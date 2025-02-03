@@ -45,15 +45,9 @@ const searchGithubUser = async (username: string) => {
    two given functions or what?*/
 const searchGithubID = async () => {
   try {
-    // const userID = Math.floor(Math.random() * 100000000) + 1;
-    const userID = 950;
-    console.log(`What is the id? ${userID}`);
+    const userID = Math.floor(Math.random() * 100000000) + 1;
     // console.log(import.meta.env);
     const response = await fetch(
-      // `https://api.github.com/users?id=${randomID}`,
-      // `https://api.github.com/users/id=${1}`,
-      // `https://api.github.com/users/id/${1}`,
-      // `https://api.github.com/users/${1}`,
       // The issue was the fetch was getting /users, rather than /user
       `https://api.github.com/user/${userID}`,
       {
@@ -62,15 +56,15 @@ const searchGithubID = async () => {
         },
       }
     );
-    // console.log('Response:', response);
+    console.log('Response:', response);
     const data = await response.json();
     if (!response.ok) {
       throw new Error('invalid API response, check the network tab');
     }
-    // console.log('Data:', data);
+    console.log('Data:', data);
     return data;
   } catch (err) {
-    // console.log('an error occurred', err);
+    console.log('an error occurred', err);
     return [];
   }
 };
