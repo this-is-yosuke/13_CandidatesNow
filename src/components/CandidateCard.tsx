@@ -6,7 +6,7 @@ type CandidateCardProps = {
     removeFromStorage?: | ((
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
         currentlyOnCandidateList: boolean | null | undefined,
-        name: string | null
+        login: string | null
     ) => void) | null;
     // The buttons don't appear to be part of the card CHANGED
     addToPotentialCandidates?: (()=>void) | null;
