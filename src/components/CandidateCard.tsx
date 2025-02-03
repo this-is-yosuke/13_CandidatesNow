@@ -51,7 +51,7 @@ const CandidateCard = ({
                             <section>
                                 {/* <button onClick={()=>loadRandomProfile?.()}></button> */}
                                 <button onClick={()=>loadRandomID?.()}></button>
-                                <button onClick={()=>{addToPotentialCandidates?.(); addToPotentialCandidates?.()}}></button>
+                                <button onClick={()=>{addToPotentialCandidates?.(); loadRandomID?.()}}></button>
                             </section>
                         )}
                     </article>
