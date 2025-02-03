@@ -1,5 +1,5 @@
 // import { useState, useEffect } from 'react'; useEffect appears unneeded
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // import { searchGithub, searchGithubUser } from '../api/API'; searchGithubUser is seemingly useless
 // import { searchGithub, searchGithubID } from '../api/API';
 import { searchGithubID } from '../api/API';
@@ -9,18 +9,9 @@ import type Candidate from '../interfaces/Candidate.interface';
 const CandidateSearch = () => {
 
   const [currentCandidate, setCandidate] = useState<Candidate>({
-    // Name: '',
-    Login: '',
-    ProfilePic: '',
-    Location: '',
-    Email: '',
-    Company: '',
-    Bio: '',
     login: '',
     id: 0,
-    node_id: '',
     avatar_url: '',
-    gravatar_id: '',
     location: '',
     email: '',
     company: '',
@@ -57,10 +48,15 @@ const CandidateSearch = () => {
     setCandidate(data);
   };
 
+  useEffect(() => {
+    loadRandomID();
+  }, []);
+
   return (
   <>
     {/* <section onLoad={()=>loadRandomProfile()}> */}
-    <section onLoad={()=>loadRandomID()}>
+    {/* <section onLoad={()=>loadRandomID()}> */}
+    <section>
       <h1>CandidateSearch</h1>
     </section>
     <CandidateCard

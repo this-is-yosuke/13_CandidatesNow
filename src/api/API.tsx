@@ -54,6 +54,7 @@ const searchGithubID = async () => {
       // `https://api.github.com/users/id=${1}`,
       // `https://api.github.com/users/id/${1}`,
       // `https://api.github.com/users/${1}`,
+      // The issue was the fetch was getting /users, rather than /user
       `https://api.github.com/user/${userID}`,
       {
         headers: {
