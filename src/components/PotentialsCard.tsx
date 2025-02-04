@@ -3,7 +3,7 @@ import type Candidate from '../interfaces/Candidate.interface';
 import CandidateCard from './CandidateCard';
 
 interface PotentialsProps {
-    addedCandidates: Candidate[];
+    potentialCandidates: Candidate[];
     removeFromStorage:
         | ((
             e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -14,12 +14,12 @@ interface PotentialsProps {
 }
 
 const PotentialsCard = ({
-    addedCandidates,
+    potentialCandidates,
     removeFromStorage,
 }: PotentialsProps) => {
     return (
         <ul>
-            {addedCandidates.map((candidate) => (
+            {potentialCandidates.map((candidate) => (
                 <CandidateCard
                     currentCandidate={candidate}
                     key={candidate.login}
