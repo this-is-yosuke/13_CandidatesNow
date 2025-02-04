@@ -31,7 +31,7 @@ const CandidateCard = ({
                     <img src={currentCandidate.avatar_url ?? ""} alt='profile-pic'/>
                 </figure>
                 <article className='details'>
-                    <p>Username: {currentCandidate.login}</p>
+                    <p>Username: {currentCandidate.login} <i>({currentCandidate.name})</i> </p>
                     <p>Location: {currentCandidate.location}</p>
                     <p>Email: {currentCandidate.email}</p>
                     <p>Company: {currentCandidate.company}</p>
