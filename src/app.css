@@ -1,0 +1,36 @@
+/* We need to:
+   1) resize the profile image
+   2) make the add/skip buttons look different
+   3) give a dark background to the profile
+   GO */
+
+.add {
+background-color: green;
+float: right;
+}
+
+.candidateCard {
+    background-color: black;
+    border-radius: 35px;
+    width: 60%;
+}
+
+.cardInnards {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+
+.profile {
+    width: 100%;
+}
+
+.skip {
+    background-color: red;
+}
+
