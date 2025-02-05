@@ -1,9 +1,3 @@
-/* We need to:
-   1) resize the profile image
-   2) make the add/skip buttons look different
-   3) give a dark background to the profile
-   GO */
-
 .add {
 background-color: green;
 float: right;
@@ -20,11 +14,9 @@ float: right;
     padding-right: 10px;
 }
 
-.container {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-  }
+.error-text {
+    text-align: center;
+}
 
 .profile {
     width: 100%;

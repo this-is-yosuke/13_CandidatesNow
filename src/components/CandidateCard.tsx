@@ -8,9 +8,7 @@ type CandidateCardProps = {
         currentlyOnCandidateList: boolean | null | undefined,
         login: string | null
     ) => void) | null;
-    // The buttons don't appear to be part of the card CHANGED
     addToPotentialCandidates?: (()=>void) | null;
-    // loadRandomProfile?: (()=>void) | null;
     loadRandomID?: (()=>void) | null;
     onCandidateList?: boolean | null;
 };
@@ -18,15 +16,21 @@ type CandidateCardProps = {
 const CandidateCard = ({
     currentCandidate,
     removeFromStorage,
-    // The buttons do not appear to be part of the card CHANGED
     addToPotentialCandidates,
-    // loadRandomProfile,
     loadRandomID,
     onCandidateList,
 }: CandidateCardProps) => {
     return (
         <>
             <section className='candidateCard'>
+                {!currentCandidate.login ? (
+                    <aside className='icons'>
+                        <p className='error-text'>Unable to find a candidate. Please try again.</p>
+                        <button className='skip' onClick={()=>loadRandomID?.()}
+                        >-</button>
+                        </aside>
+                ) : (
+                    <>
                 <figure className='container'>
                     <img className='profile' src={currentCandidate.avatar_url ?? ""} alt='profile-pic'/>
                 </figure>
@@ -49,12 +53,13 @@ const CandidateCard = ({
                         </aside>
                         ) : (
                             <section>
-                                {/* <button onClick={()=>loadRandomProfile?.()}></button> */}
                                 <button className='skip' onClick={()=>loadRandomID?.()}>-</button>
                                 <button className='add' onClick={()=>{addToPotentialCandidates?.(); loadRandomID?.()}}>+</button>
                             </section>
                         )}
                     </article>
+                    </>
+                )}
                 </section>
         </>
     );
