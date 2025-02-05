@@ -27,10 +27,10 @@ const CandidateCard = ({
     return (
         <>
             <section className='candidateCard'>
-                <figure>
-                    <img src={currentCandidate.avatar_url ?? ""} alt='profile-pic'/>
+                <figure className='container'>
+                    <img className='profile' src={currentCandidate.avatar_url ?? ""} alt='profile-pic'/>
                 </figure>
-                <article className='details'>
+                <article className='details cardInnards'>
                     <p>Username: {currentCandidate.login} <i>({currentCandidate.name})</i> </p>
                     <p>Location: {currentCandidate.location}</p>
                     <p>Email: {currentCandidate.email}</p>
@@ -38,20 +38,20 @@ const CandidateCard = ({
                     <p>Bio: {currentCandidate.bio}</p>
                     {onCandidateList ? (
                         <aside className='icons'>
-                            <button onClick={(event: React.MouseEvent<HTMLButtonElement>) => 
+                            <button className='skip' onClick={(event: React.MouseEvent<HTMLButtonElement>) => 
                                 removeFromStorage?.(
                                     event,
                                     onCandidateList,
                                     currentCandidate.login
                                 )
                             }
-                            />
+                            >-</button>
                         </aside>
                         ) : (
                             <section>
                                 {/* <button onClick={()=>loadRandomProfile?.()}></button> */}
-                                <button onClick={()=>loadRandomID?.()}></button>
-                                <button onClick={()=>{addToPotentialCandidates?.(); loadRandomID?.()}}></button>
+                                <button className='skip' onClick={()=>loadRandomID?.()}>-</button>
+                                <button className='add' onClick={()=>{addToPotentialCandidates?.(); loadRandomID?.()}}>+</button>
                             </section>
                         )}
                     </article>
