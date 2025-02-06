@@ -1,33 +1,45 @@
-# React + TypeScript + Vite
+# ReactPortfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Github license](https://img.shields.io/badge/license-The_Unlicense-blue.svg)
 
-Currently, two official plugins are available:
+## Description
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+This react application allows the user to pull programmers using Github's API. If the user finds a profile they like, then they can save that profile to a list for later viewing. They can also remove saved candidates from that list. That way, looking for potential candidates for your job openings is easier to manage.
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+[1. Installation](#1-installation)
+[2. Usage](#2-usage)
+[3. License](#3-license)
+[4. Contributing](#4-contributing)
+[5. Tests](#5-tests)
+[6. Questions](#6-questions)
 
-* Configure the top-level `parserOptions` property as follows:
+## 1. Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+You can download the repo here: https://github.com/this-is-yosuke/13_CandidatesNow.
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+## 2. Usage
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+This application uses React.js and Vite. You can find a deployed version of the app here:https://one3-candidatesnow.onrender.com/. This screenshot shows the app's appearance: ![13_CandidatesNow](src/assets/13_SampleImage.png)
+
+## 3. License
+
+    This project is licensed under the The Unlicense license.
+
+* [License](#License)
+
+## 4. Contributing
+
+Clone the repo and make a pull request.
+
+## 5. Tests
+
+None
+
+## 6. Questions
+
+You can see my work at:
+https://github.com/this-is-yosuke
+
+You can reach me at my email:
